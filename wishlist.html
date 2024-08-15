@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="wishlist.css">
+    <script src="https://kit.fontawesome.com/96c75676d8.js" crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyX95Pp5Kdh_u6Gv_BSRYuu4jSt3dZjJo&libraries=places"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gassets.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <div id="above-bar"></div>
+    <div id="bottom-bar"></div>
+
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+              <img src="assets/drop logo.jpg" alt="Logo" style="border-radius: 100px;">
+            </a>
+
+
+
+            <div class="location">
+                <i class="fa-solid fa-location-dot" style="color: #fff; font-size: 14px;"></i>
+                <span id="location-text">Your Location</span>
+                <span id="weather-report">Weather: Loading...</span>
+            </div>
+        </div>
+        <div class="search-bar-container">
+            <div class="search-bar">
+                <select>
+                    <option><a href="allcategories.html">All Categories</a></option>
+                      <option><a href="ve">Vegetables</a></option>
+                      <option><a href="#">Fruits</a></option>
+                      <option><a href="#">Dairy</a></option>
+                      <option><a href="#">More</a></option>
+
+                </select>
+                <input type="text" placeholder="Search for products...">
+            </div>
+            <div class="search-icon">
+                <img src="assets/Search-btn.png" alt="Search">
+            </div>
+        </div>
+
+        <div class="icons">
+              <a href="wishlist.html"><img src="assets/Wishlist-1.png" alt="Wishlist">
+              </a>
+              <a href="cart.html"><img src="assets/Cart-1.png" alt="Cart">
+              </a>
+              <div class="profile-icon">
+                <a href="signup.html">
+                  <img src="assets/Profile.png" alt="Profile">
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="background">
+        <div class="breadcrumbs">Home / Wishlist</div>
+        <div class="title"> Wishlist</div>
+    </div>
+    <div class="container1">
+        <!-- <div class="sidebar">
+            <ul>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<img src="assets/dashboard.png" alt="img"> &nbsp;&nbsp;&nbsp;Dashboard</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<img src="assets/person - Copy.png" alt="img">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Personal Info</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<img src="assets/pay - Copy.png" alt="img">&nbsp;&nbsp;&nbsp;Payment Method</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<img src="assets/orders-dashboard.png" alt="img">&nbsp;&nbsp;&nbsp;Order</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<img src="assets/wishlist - Copy.png" alt="img">&nbsp;&nbsp;&nbsp;Wishlist</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<img src="assets/address.png" alt="img">&nbsp;&nbsp;&nbsp;Address</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<img src="assets/password.png" alt="img">&nbsp;&nbsp;&nbsp;Change Password</a></li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;<img src="assets/log-in.png" alt="img">&nbsp;&nbsp;&nbsp;Logout</a></li>
+            </ul>
+        </div> -->
+        <div class="container">
+       
+            <table class="cart-table" style="border:  1px solid #ddd; min-height: 50%;" >
+                <thead>
+                    <tr style="border:  1px solid #ddd;height: 30px;">
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <!-- <th>Total</th>
+                        <th>Action</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  >
+                        <td><img src="assets/product1.png" alt="Tomato Local" class="product-img"><span>Tomato Local</span></td>
+                        <td>&#8377; 64</td>
+                        <td class="incrase-decrease">
+                            
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" value="0" class="quantity-input" readonly>
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </td>
+                        <!-- <td class="total-price">&#8377; 64</td>
+                        <td><button class="remove-btn" onclick="removeItem(this)">X</button></td> -->
+                    </tr>
+                    <tr >
+                        <td><img src="assets/product1.png" alt="Tomato Local" class="product-img"><span>Tomato Local</span></td>
+                        <td>&#8377; 64</td>
+                        <td class="incrase-decrease">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" value="0" class="quantity-input" readonly>
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </td>
+                        <!-- <td class="total-price">&#8377; 64</td>
+                        <td><button class="remove-btn" onclick="removeItem(this)">X</button></td> -->
+                    </tr>
+                    <tr >
+                        <td><img src="assets/product1.png" alt="Tomato Local" class="product-img"><span>Tomato Local</span></td>
+                        <td>&#8377; 64</td>
+                        <td class="incrase-decrease">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" value="0" class="quantity-input" readonly>
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </td>
+                        <!-- <td class="total-price">&#8377; 64</td>
+                        <td><button class="remove-btn" onclick="removeItem(this)">X</button></td> -->
+                    </tr>
+                    <tr >
+                        <td><img src="assets/product1.png" alt="Tomato Local" class="product-img"><span>Tomato Local</span></td>
+                        <td>&#8377; 64</td>
+                        <td class="incrase-decrease">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" value="0" class="quantity-input" readonly>
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </td>
+                        <!-- <td class="total-price">&#8377; 64</td>
+                        <td><button class="remove-btn" onclick="removeItem(this)">X</button></td> -->
+                    </tr>
+                    <tr >
+                        <td><img src="assets/product1.png" alt="Tomato Local" class="product-img"><span>Tomato Local</span></td>
+                        <td>&#8377; 64</td>
+                        <td class="incrase-decrease">
+                            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" value="0" class="quantity-input" readonly>
+                            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </td>
+                        <!-- <td class="total-price">&#8377; 64</td>
+                        <td><button class="remove-btn" onclick="removeItem(this)">X</button></td> -->
+                    </tr>
+                    
+
+                    <!-- Repeat rows as necessary -->
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    <div class="containernew">
+        <div class="promo-cards">
+            <div class="card card-vegetables">
+                <p class="offer">Offer!!</p>
+                <p class="discount">Get 10% off <br>
+                     on Vegetables</p>
+            </div>
+            <div class="card card-fruits" >
+                <p class="natural">Natural!!</p>
+                <p class="discount">Get Garden <br>Fresh Fruits</p>
+            </div>
+        </div>
+        <div class="main-banner">
+            <!-- <h1>Be Healthy & Eat Only Fresh Organic Vegetables</h1> -->
+            <!-- <button class="shop-now">Shop Now</button> -->
+        </div>
+    </div>
+    <div class="feature-containerhp">
+        <div class="featurehp">
+            <img src="assets/bestdeals.png" alt="Deals">
+            <div>
+                <h3>Best Prices & Deals</h3>
+                <p>Don't miss our daily amazing deals and prices</p>
+            </div>
+        </div>
+        <div class="featurehp">
+            <img src="assets/refundable.png" alt="Refund">
+            <div>
+                <h3>Refundable</h3>
+                <p>If your items have damage we agree to refund it</p>
+            </div>
+        </div>
+        <div class="featurehp">
+            <img src="assets/delivery.png" alt="Free Delivery">
+            <div>
+                <h3>Free Delivery</h3>
+                <p>Do purchase over ₹50 and get free delivery anywhere</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-top">
+            <div class="contact-info">
+           <div>
+                   <div style="display: flex; align-items: center;">
+                       <img src="assets/drop logo.jpg" alt="Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                       <h4 style="margin: 0;">Drop It</h4>
+                   </div>
+                   <ul style="list-style-type: none; padding: 0;">
+                       <li>
+                           <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>
+                           <a href="#">Address</a>
+                       </li>
+                       <li>
+                           <i class="fas fa-phone" style="margin-right: 10px;"></i>
+                           <a href="#">Call us</a>
+                       </li>
+                       <li>
+                           <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                           <a href="#">Email</a>
+                       </li>
+                       <li>
+                           <i class="fas fa-clock" style="margin-right: 10px;"></i>
+                           <a href="#">Work Hours</a>
+                       </li>
+                   </ul>
+   
+               </ul>
+           </div>
+           </div>
+           <div>
+               <h4>Account</h4>
+               <ul>
+                   <li><a href="#">Wishlist</a></li>
+                   <li><a href="#">Cart</a></li>
+                   <li><a href="#">Track Orders</a></li>
+                   <li><a href="#">Shipping & Delivery</a></li>
+               </ul>
+           </div>
+           <div>
+               <h4>Useful Links</h4>
+               <ul>
+                   <li><a href="#">About Us</a></li>
+                   <li><a href="#">Contact</a></li>
+                   <li><a href="#">Hot Deals</a></li>
+                   <li><a href="#">Promotions</a></li>
+               </ul>
+           </div>
+           <div>
+               <h4>Help Centtre</h4>
+               <ul>
+                   <li><a href="#">Payments</a></li>
+                   <li><a href="#">Refund</a></li>
+                   <li><a href="#">Checkout</a></li>
+                   <li><a href="#">Q&A</a></li>
+                   <li><a href="#">Privacy Policy</a></li>                
+               </ul>
+           </div>
+       </div>
+        <div class="footer-bottom">
+            <div style="display: flex; align-items: center;">
+                <p style="color: black;">&copy; 2024 Grocery Mart. All rights reserved. | <a href="#">Privacy Policy</a></p>
+
+            </div>
+            <div class="social-links1">
+                <a href="#" class="twittericon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="twittericon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="twittericon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="twittericon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
